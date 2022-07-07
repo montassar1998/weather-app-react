@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&family=VT323&display=swap");
-
 .left {
   display: flex;
   flex-direction: column;
@@ -25,7 +24,6 @@
 div > span {
   display: inline-block;
 }
-
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 99vh);
@@ -38,7 +36,6 @@ div > span {
     "a b";
   align-content: space-between;
 }
-
 .item1 {
   grid-area: a;
 }

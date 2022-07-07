@@ -9,7 +9,6 @@ import DetailedForecast from './components/DetailedForecast';
 import Weeklyforecast from './components/WeeklyForecast';
 import { useState } from 'react';
 function App() {
-
   // for (let  i in CityData){
   //   console.log("i=",i);
   //   delete CityData[i]["lat"]
@@ -22,19 +21,15 @@ function App() {
   //   delete CityData[i]["admin_name"]
   // }
   // const data = JSON.stringify(CityData)
-
   // fs.writeFile('./myFile.json', JSON.stringify(data), (err) => {
   //   if (err) console.log('Error writing file:', err);
   // })
-
   const [selectedCity, setSelectedCity] = useState({})
-  const [weatherData, setWeatherData] = useState({daily:[]})
+  const [weatherData, setWeatherData] = useState({ daily: [] })
   function changeCity(a) {
-
     console.log("lolmllllllllll ", a)
     let url = API_URL + `lat=${a.lat}&lon=${a.long}&exclude=current,hourly,minutely,alerts&units=metric&appid=${API_KEY}&units=metric`
     console.log(url)
-
     axios.get(url).then((response) => {
       setWeatherData(response.data)
       setSelectedCity(a)
@@ -43,20 +38,14 @@ function App() {
     // setSelectedCity({})
   }
   if (weatherData.length !== 0) {
-   
     return (
       <div className="App">
-
         {/* {console.log("am app and I have city ", selectedCity)} */}
         <SearchBarch changeCity={changeCity} placeholder="Search for a city"></SearchBarch>
         <WeatherCard className="WeatherCard" data={selectedCity} dailyForecast={weatherData.daily[0]}></WeatherCard>
-
         <Weeklyforecast weatherWeeklyData={weatherData}></Weeklyforecast>
       </div>
     );
   }
-
-
 }
-
 export default App;

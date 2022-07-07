@@ -28,7 +28,6 @@ function Weeklyforecast(props) {
     //     day1 = (day1+1) %7
     // }
     // console.log("final days  = ", res)
-
     console.log("the weekly forecast receives", props.weatherWeeklyData)
     var weekdays = new Array(7);
     weekdays[0] = "Sunday";
@@ -48,9 +47,7 @@ function Weeklyforecast(props) {
                 console.log("key", key)
                 return <DetailedForecast dayForecast={props.weatherWeeklyData.daily[key]} dayName={d}></DetailedForecast>
             })}
-
         </Accordion>
-
     )
 }
 export default Weeklyforecast;

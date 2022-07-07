@@ -2,7 +2,7 @@
   margin-top: 50px;
 }
 .weather-panel {
-  margin:auto;
+  margin: auto;
   background-image: url("https://unsplash.it/600/400?image=1043&blur");
   background-size: cover;
   border-radius: 20px;
@@ -10,7 +10,6 @@
   color: #fff;
   overflow: hidden;
   position: relative;
-
   small {
     color: inherit;
     font-size: 50%;
