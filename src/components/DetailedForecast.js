@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    Accordion,
     AccordionItem,
     AccordionItemHeading,
     AccordionItemButton,
@@ -10,7 +9,6 @@ import {
 import './DetailedForecast.css'
 
 import 'react-accessible-accordion/dist/fancy-example.css';
-import Weeklyforecast from './WeeklyForecast';
 
 function DetailedForecast(props) {
     console.log("det daily forecast ", props.dayForecast)

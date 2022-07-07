@@ -15,17 +15,23 @@ function SearchBarch({ placeholder, changeCity }) {
     const [filteredData, setFilteredData] = useState([]);
     const handleFilter = (event) => {
         const searchWord = event.target.value
-        fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=` + searchWord.toLowerCase() + `&asciiMode=true`, options)
-            .then(response => response.json())
-            .then(response => {
-                let res = []
-                for (let i in response.data) {
-                    res.push(response.data[i]);
-                }
-                console.log("res ", res);
-                setFilteredData(res)
-            })
-            .catch(err => console.error(err));
+        console.log("Sw" + searchWord + "," + typeof searchWord + "," + searchWord.length)
+        if (searchWord == '') {
+            setFilteredData([])
+            return 
+        }
+      
+            fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=` + searchWord.toLowerCase() + `&asciiMode=true`, options)
+                .then(response => response.json())
+                .then(response => {
+                    let res = []
+                    for (let i in response.data) {
+                        res.push(response.data[i]);
+                    }
+                    console.log("res ", res);
+                    setFilteredData(res)
+                })
+                .catch(err => console.error(err));
     }
 
     function HandleUserChoice(event) {
@@ -38,17 +44,16 @@ function SearchBarch({ placeholder, changeCity }) {
         for (let i of filteredData) {
 
 
-            console.log("i = ", cityName.toLowerCase().length, i.city.toLowerCase().length, cityName.toLowerCase() , i.city.toLowerCase())
+            console.log("i = ", cityName.toLowerCase().length, i.city.toLowerCase().length, cityName.toLowerCase(), i.city.toLowerCase())
             if (cityName.toLowerCase() === i.city.toLowerCase()) {
-                console.log("we found it" , i," " , i.city.toLowerCase() ==  event.target.text.toLowerCase());
                 lat = i.latitude
                 long = i.longitude
                 //alert("gothcha")
-                
+
             }
         }
         changeCity({ cityName, lat, long })
-        
+
     }
 
     return (

@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import { API_KEY } from './../apis/WeatherApi';
 import { useState } from "react";
 import './weatherCard.css'
-import DetailedForecast from './DetailedForecast';
-import CloudIcon from '@mui/icons-material/Cloud';
 
 
 
