@@ -8,9 +8,7 @@ import {
     AccordionItemButton,
     AccordionItemPanel,
 } from 'react-accessible-accordion';
-
 import 'react-accessible-accordion/dist/fancy-example.css';
-
 function Weeklyforecast(props) {
     function rotLeft(array, n) {
         while (n) {
@@ -48,11 +46,11 @@ function Weeklyforecast(props) {
     weekdays[6] = "Saturday";
     let today = new Date()
     let day1 = today.getDay();
-    weekdays = rotLeft(weekdays,day1)
+    weekdays = rotLeft(weekdays, day1)
     console.log("methode 2 plus facile ", weekdays)
     return (
         <Accordion >
-            {weekdays.map((d , key )=>{
+            {weekdays.map((d, key) => {
                 console.log("key", key)
                 return <DetailedForecast dayForecast={props.weatherWeeklyData.daily[key]} dayName={d}></DetailedForecast>
             })}

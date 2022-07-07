@@ -31,9 +31,11 @@ function DetailedForecast(props) {
         return (
             <AccordionItem >
                 <AccordionItemHeading>
-                    <AccordionItemButton>
-                        <span id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></span>
-                        {props.dayName} {props.dayForecast.weather[0].description}   {parseInt(props.dayForecast.temp.min)}° / {parseInt(props.dayForecast.temp.max)}°
+                    <AccordionItemButton >
+                        <div>
+                            
+                            <span className="acc_header"><span><span id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></span>{props.dayName}</span> <span>{props.dayForecast.weather[0].description}  </span> <span>{parseInt(props.dayForecast.temp.min)}° / {parseInt(props.dayForecast.temp.max)}°</span></span>
+                        </div>
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className="wrapper">

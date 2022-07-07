@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&family=VT323&display=swap");
+
 .left {
   display: flex;
   flex-direction: column;
@@ -37,10 +39,16 @@ div > span {
   align-content: space-between;
 }
 
-
 .item1 {
   grid-area: a;
 }
 .item2 {
   grid-area: b;
+}
+.acc_header {
+  display: flex;
+  justify-content: space-around;
+}
+* {
+  font-family: "Days One", sans-serif;
 }
