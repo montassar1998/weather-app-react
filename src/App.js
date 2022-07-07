@@ -49,9 +49,9 @@ function App() {
 
         {/* {console.log("am app and I have city ", selectedCity)} */}
         <SearchBarch changeCity={changeCity} placeholder="Search for a city"></SearchBarch>
-        <WeatherCard data={selectedCity} dailyForecast={weatherData.daily[0]}></WeatherCard>
+        <WeatherCard className="WeatherCard" data={selectedCity} dailyForecast={weatherData.daily[0]}></WeatherCard>
 
-        <Weeklyforecast></Weeklyforecast>
+        <Weeklyforecast weatherWeeklyData={weatherData}></Weeklyforecast>
       </div>
     );
   }

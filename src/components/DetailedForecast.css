@@ -1,0 +1,46 @@
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.left div {
+  display: flex;
+  justify-content: space-between;
+}
+.down {
+  clear: both;
+}
+.right {
+  float: right;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.right div {
+  display: flex;
+  justify-content: space-between;
+}
+div > span {
+  display: inline-block;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 99vh);
+  grid-template-rows: repeat(2, 10%);
+  height: 6em;
+  width: 6em;
+  grid-gap: 1em;
+  grid-template-areas:
+    "a b"
+    "a b";
+  align-content: space-between;
+}
+
+
+.item1 {
+  grid-area: a;
+}
+.item2 {
+  grid-area: b;
+}
